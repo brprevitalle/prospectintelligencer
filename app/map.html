@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Massachusetts · LabHaptic Intelligence</title>
+<link rel="stylesheet" href="/static/vendor/maplibre-gl.css"><link rel="stylesheet" href="/static/map.css">
+<script defer src="/static/vendor/maplibre-gl.js"></script><script defer src="/static/map.js"></script></head>
+<body>
+<header class="topbar"><a class="brand" href="/"><span class="brand-icon">L<span>H</span></span><span>LabHaptic<small>INTELLIGENCE</small></span></a><div class="nav-title">Property explorer <span>/ Massachusetts</span></div><div class="local"><i></i> Local workspace</div></header>
+<div class="workspace">
+<aside id="sidebar">
+<div class="intro"><div class="eyebrow">THE COMMONWEALTH, CONNECTED</div><h1>Explore Massachusetts.</h1><p>Find the property. Understand the ownership.<br>See what comes next.</p></div>
+<form id="search-form"><label for="record-mode">RECORD VIEW</label><select id="record-mode"><option value="parcels">Property parcels</option><option value="supporting">Supporting records only</option></select><label id="search-label" for="search">ADDRESS OR REPORTED OWNER</label><div class="search-row"><input id="search" placeholder="Search an address or owner…" autocomplete="off" minlength="3" maxlength="150"><button type="submit" title="Search properties" aria-label="Search properties">→</button></div>
+<div class="filter-row"><label>Municipality<select id="town"><option value="0">All Massachusetts</option></select></label><label>Property type<select id="segment"><option value="">All property types</option><option value="single_family">Single-family</option><option value="two_family">Two-family</option><option value="small_multifamily">Small multifamily</option><option value="apartment">Apartments</option><option value="condominium">Condominium</option><option value="mixed_use">Mixed-use</option><option value="commercial_unclassified">Commercial</option><option value="industrial_unclassified">Industrial</option><option value="multiple_uses">Multiple assessment uses</option><option value="unknown">Needs classification</option></select></label></div></form>
+<div class="sidebar-content">
+<section id="overview"><div class="section-heading"><h2 id="area-title">Statewide coverage</h2><span id="coverage-badge" class="badge">Loading</span></div><div class="metrics"><div><strong id="parcel-total">—</strong><span id="primary-metric-label">parcel geometries</span></div><div id="assessment-metric"><strong id="assessment-total">—</strong><span>assessment records</span></div></div><p id="coverage-note" class="muted">Connecting to the local property database…</p><div class="callout"><span class="callout-icon">↗</span><div><strong>A property-first view.</strong><p>Choose a town or zoom in to explore parcels. Select a boundary to see its reported owner and assessor information.</p></div></div></section>
+<section id="details" hidden><div class="section-heading"><h2>Property details</h2><button id="close-detail" class="text-button">Close ×</button></div><div id="detail-content"></div></section>
+<section id="results-section" hidden><div class="section-heading"><h2 id="results-title">Property records</h2><span class="badge" id="result-page"></span></div><p id="results-note" class="muted small">Assessment records are listed separately. A parcel may have multiple owners or units.</p><div id="results"></div><div class="pagination"><button id="previous" class="secondary">← Previous</button><button id="next" class="secondary">Next →</button></div></section>
+<section class="source-note"><div class="eyebrow">SOURCE & CONTEXT</div><p>MassGIS municipal parcel packages. Fiscal years vary by town. Assessor boundaries are not a legal survey.</p><p>Contacts and purchasing responsibility have not been enriched.</p><a href="/hudson">Hudson data-quality pilot ↗</a> <a href="/docs">API ↗</a></section>
+</div></aside>
+<main class="map-shell"><div id="map" aria-label="Interactive Massachusetts property map"></div>
+<div class="map-toolbar"><button id="state-view" class="map-button">↖ Massachusetts</button><button id="hudson-view" class="map-button">Hudson</button><button id="layers-button" class="map-button" aria-expanded="false">▱ Layers</button></div>
+<div id="layers" class="floating layers" hidden><strong>Map layers</strong><label><input type="checkbox" id="base-toggle" checked> MassGIS basemap</label><label><input type="checkbox" id="town-toggle" checked> Town boundaries</label><label><input type="checkbox" id="parcel-toggle" checked> Parcel boundaries</label><label><input type="checkbox" id="color-toggle" checked> Color by property type</label></div>
+<div class="map-message" id="map-message" role="status">Loading Massachusetts…</div>
+<div id="property-legend" class="floating legend"><div class="eyebrow">PROPERTY INTELLIGENCE</div><div><i style="background:#2a8b79"></i> Residential <i style="background:#d48c43"></i> Commercial</div><div><i style="background:#7d6ba6"></i> Condominium <i style="background:#86969d"></i> Other / unclassified</div></div>
+<div id="coordinates" class="coordinates"></div><div id="town-tooltip" class="town-tooltip" hidden></div>
+</main></div><div id="toast" role="alert" hidden></div>
+</body></html>
